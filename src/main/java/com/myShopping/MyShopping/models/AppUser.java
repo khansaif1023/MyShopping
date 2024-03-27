@@ -1,10 +1,7 @@
 package com.myShopping.MyShopping.models;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +18,7 @@ import java.util.UUID;
 public class AppUser {
 
     @Id // This annotation tell that id is unique
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id; // unique base64Id--->It is the kind that got generated on the basisi of time
     @Column(nullable = false)
     private String name;
